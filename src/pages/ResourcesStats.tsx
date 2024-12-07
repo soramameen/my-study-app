@@ -1,3 +1,4 @@
+// src/pages/ResourcesStats.tsx
 import React from "react";
 import { Link } from "react-router-dom";
 import { resources } from "../data/Resources";
@@ -6,16 +7,40 @@ const ResourcesStats: React.FC = () => {
   const statsResources = resources.filter((r) => r.category === "stats");
 
   return (
-    <div>
-      <h2>統計学系リソース</h2>
-      <ul>
+    <div className="container mx-auto p-6">
+      {/* 見出し */}
+      <h2 className="text-2xl font-bold text-center mb-6">統計学系リソース</h2>
+
+      {/* リソースリスト */}
+      <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {statsResources.map((r) => (
-          <li key={r.id}>
-            <Link to={`/resources/${r.id}`}>{r.title}</Link>
+          <li
+            key={r.id}
+            className="bg-white rounded-lg shadow-md p-4 flex items-center hover:shadow-lg transition-shadow duration-300"
+          >
+            {r.imageUrl && (
+              <img
+                src={r.imageUrl}
+                alt={r.title}
+                className="w-12 h-auto mr-4 object-contain"
+              />
+            )}
+            <Link
+              to={`/resources/${r.id}`}
+              className="text-blue-600 hover:text-blue-800 font-semibold"
+            >
+              {r.title}
+            </Link>
           </li>
         ))}
       </ul>
-      <Link to="/resources">← カテゴリー選択に戻る</Link>
+
+      {/* 戻るリンク */}
+      <div className="mt-8 text-center">
+        <Link to="/resources" className="text-blue-500 hover:underline">
+          ← カテゴリー選択に戻る
+        </Link>
+      </div>
     </div>
   );
 };
