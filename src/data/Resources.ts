@@ -3,7 +3,14 @@ export type Resource = {
   title: string;
   description: string;
   url: string;
-  category: "general" | "info" | "math" | "stats";
+  category:
+    | "general"
+    | "info"
+    | "math"
+    | "stats"
+    | "programming"
+    | "machine-learning"
+    | "data-analysis";
   imageUrl?: string; // 画像URLをオプショナルで追加
 };
 
@@ -36,7 +43,7 @@ export const resources: Resource[] = [
     description:
       "コードを読みやすく理解しやすくするための実践的なテクニックを紹介する書籍。変数名やコメントの書き方、制御フローやロジックの整理、テスト記述など、コード品質向上のためのノウハウが詰まっている。",
     url: "https://amzn.to/49v6LSF",
-    category: "info",
+    category: "programming",
     imageUrl: "https://m.media-amazon.com/images/I/81+3DpjuMdL._SY522_.jpg",
   },
   {
@@ -45,7 +52,7 @@ export const resources: Resource[] = [
     description:
       "より良いプログラマになるための実践的アプローチを解説した書籍。アジャイルソフトウェア開発手法の先駆者による執筆で、経験を積み、生産性を高め、ソフトウェア開発全体を深く理解するためのノウハウがまとめられている。入門者からベテランまで、読み返すたびに新たな発見がある一冊。",
     url: "https://amzn.to/3ZJ6dWh",
-    category: "info",
+    category: "programming",
     imageUrl: "https://m.media-amazon.com/images/I/816iLrKIvcL._SL1419_.jpg",
   },
   {
@@ -65,7 +72,7 @@ export const resources: Resource[] = [
     description:
       'ディープラーニングの本格的な入門書。外部のライブラリに頼らずに、Python 3によってゼロからディープラーニングを作ることで、ディープラーニングの原理を楽しく学びます。ディープラーニングやニューラルネットワークの基礎だけでなく、誤差逆伝播法や畳み込みニューラルネットワークなども実装レベルで理解できます。ハイパーパラメータの決め方や重みの初期値といった実践的なテクニック、Batch NormalizationやDropout、Adamといった最近のトレンド、自動運転や画像生成、強化学習などの応用例、さらには、なぜディープラーニングは優れているのか?なぜ層を深くすると認識精度がよくなるのか?といった“Why"に関する問題も取り上げます。',
     url: "https://amzn.to/4gqiepa",
-    category: "info",
+    category: "machine-learning",
     imageUrl: "https://m.media-amazon.com/images/I/91exSUPsr6L._SY466_.jpg",
   },
   {

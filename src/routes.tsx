@@ -10,6 +10,11 @@ import ResourcesStats from "./pages/ResourcesStats";
 import ResourceDetail from "./pages/ResourceDetail";
 import NotFound from "./pages/NotFound";
 
+// 新たに作成したページコンポーネントをインポート
+import ResourcesProgramming from "./pages/ResourcesProgramming";
+import ResourcesMachineLearning from "./pages/ResourcesMachineLearning";
+import ResourcesDataAnalysis from "./pages/ResourcesDataAnalysis";
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -25,6 +30,12 @@ const router = createBrowserRouter([
           { path: "info", element: <ResourcesInfo /> },
           { path: "math", element: <ResourcesMath /> },
           { path: "stats", element: <ResourcesStats /> },
+
+          // 追加したルート
+          { path: "programming", element: <ResourcesProgramming /> },
+          { path: "machine-learning", element: <ResourcesMachineLearning /> },
+          { path: "data-analysis", element: <ResourcesDataAnalysis /> },
+
           { path: ":id", element: <ResourceDetail /> },
         ],
       },
