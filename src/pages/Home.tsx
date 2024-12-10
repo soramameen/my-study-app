@@ -5,7 +5,9 @@ import { resources } from "../data/Resources";
 
 const Home: React.FC = () => {
   // imageUrlを持つ書籍のみフィルタリング
-  const bookResources = resources.filter((r) => r.imageUrl);
+  const bookResources = resources.filter(
+    (r) => r.reccomeded == true && r.imageUrl
+  );
 
   return (
     <div className="container mx-auto p-6">
