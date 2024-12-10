@@ -57,7 +57,7 @@ export const resources: Resource[] = [
     url: "https://amzn.to/4gqiepa",
     category: "machine-learning",
     imageUrl: "https://m.media-amazon.com/images/I/91exSUPsr6L._SY466_.jpg",
-    reccomeded: true,
+    reccomeded: false,
   },
   {
     id: "master-calculus",
@@ -76,7 +76,7 @@ export const resources: Resource[] = [
       "累計100万部以上の技術書を送り出してきた著者の、日本で1番売れているJavaScriptの本が7年ぶりの大幅増補改訂。2010年の刊行から約100,000部の実績を誇るロングセラーを、ECMAScript 2022に対応した内容で200ページ増の大幅改訂。最新の基本文法から、開発に欠かせない応用トピックまで解説します。JavaScriptらしく書くために大切なオブジェクトの扱い方や、大規模開発でさらに実用的になったオブジェクト指向構文を学び、しっかりと動くプログラムの作り方を本質から理解できます。",
     url: "https://amzn.to/4isaIvw", // ここに実際のURLを挿入してください
     category: "programming",
-    reccomeded: true,
+    reccomeded: false,
     imageUrl: "https://m.media-amazon.com/images/I/71VxGM-VsLL._SY466_.jpg",
   },
   {
@@ -88,7 +88,7 @@ export const resources: Resource[] = [
     imageUrl: "https://m.media-amazon.com/images/I/71Lz5b2SI4L._SY466_.jpg",
 
     category: "programming",
-    reccomeded: true,
+    reccomeded: false,
   },
   {
     id: "self-taught-programmer-python",
@@ -97,7 +97,7 @@ export const resources: Resource[] = [
       "本書は「Pythonだけ」を学ぶ本ではありません。Pythonを使ってプログラミングを紹介していますが、伝えたい内容はPythonに限らない「プログラミング全般」の知識です。プログラマになるためのスキルを独学できる本であり、Pythonプログラミングの基本を学べるだけでなく、シェル、正規表現、パッケージ管理、バージョン管理、データ構造、アルゴリズム、仕事の始め方・やり方など、プログラマとして必要なスキルもひと通り学べます。著者のコーリー・アルソフ氏による独学の経験に基づいた実践的なアドバイスが豊富に盛り込まれており、プログラミングを独学で身につけたい方やプロを目指す方に最適な一冊です。",
     url: "https://amzn.to/49xjVi3", // ここに実際のURLを挿入してください
     category: "programming",
-    reccomeded: true,
+    reccomeded: false,
     imageUrl: "https://m.media-amazon.com/images/I/71ZpZY+xd5S._SY342_.jpg",
   },
   {
@@ -118,7 +118,7 @@ export const resources: Resource[] = [
     url: "https://amzn.to/3ZHievf", // ここに実際のURLを挿入してください
     category: "programming",
     imageUrl: "https://m.media-amazon.com/images/I/61whkFViA5L._SY522_.jpg",
-    reccomeded: true,
+    reccomeded: false,
   },
   {
     id: "good-vs-bad-code-design-introduction",
@@ -129,7 +129,7 @@ export const resources: Resource[] = [
     url: "https://amzn.to/4g3jqPp", // ここに実際のURLを挿入してください
     category: "programming",
     imageUrl: "https://m.media-amazon.com/images/I/81uCm6qpj7L._SY522_.jpg",
-    reccomeded: true,
+    reccomeded: false,
   },
   {
     id: "sukkiri-python-introduction-2nd-edition",
@@ -139,7 +139,7 @@ export const resources: Resource[] = [
     url: "https://amzn.to/49CmDmI", // ここに実際のURLを挿入してください
     category: "programming",
     imageUrl: "https://m.media-amazon.com/images/I/71jt9BEXU-L._SY522_.jpg",
-    reccomeded: true,
+    reccomeded: false,
   },
   {
     id: "html-css-web-design-introduction-2nd-edition",
@@ -150,7 +150,7 @@ export const resources: Resource[] = [
     url: "https://amzn.to/41v2X1V", // ここに実際のURLを挿入してください
     category: "programming",
     imageUrl: "https://m.media-amazon.com/images/I/81BHtZPjuvL._SY522_.jpg",
-    reccomeded: true,
+    reccomeded: false,
   },
   {
     id: "vtuber-sapuu-teaches-python",
@@ -160,7 +160,7 @@ export const resources: Resource[] = [
     url: "https://amzn.to/3Vt4zp6", // ここに実際のURLを挿入してください
     category: "programming",
     imageUrl: "https://m.media-amazon.com/images/I/81vueolIx-L._SY522_.jpg",
-    reccomeded: true,
+    reccomeded: false,
   },
   {
     id: "code-ai-generative-ai-practical-introduction",
@@ -170,7 +170,7 @@ export const resources: Resource[] = [
     url: "https://amzn.to/3ZIKu0u", // ここに実際のURLを挿入してください
     category: "programming",
     imageUrl: "https://m.media-amazon.com/images/I/714KadFykuL._SY522_.jpg",
-    reccomeded: true,
+    reccomeded: false,
   },
   {
     id: "python-algorithms-textbook",
@@ -180,7 +180,7 @@ export const resources: Resource[] = [
     url: "https://amzn.to/4g4pNlC", // ここに実際のURLを挿入してください
     category: "programming",
     imageUrl: "https://m.media-amazon.com/images/I/81pcgCg4YdL._SY522_.jpg",
-    reccomeded: true,
+    reccomeded: false,
   },
   {
     id: "html-css-web-design-beginner-book",
@@ -190,7 +190,7 @@ export const resources: Resource[] = [
     url: "https://amzn.to/3D0X9D5", // ここに実際のURLを挿入してください
     category: "programming",
     imageUrl: "https://m.media-amazon.com/images/I/81tfCIhb3mL._SY522_.jpg",
-    reccomeded: true,
+    reccomeded: false,
   },
   {
     id: "amazon-co-jp-javascript-introduction-course",
@@ -201,6 +201,6 @@ export const resources: Resource[] = [
     url: "https://amzn.to/4g2ZGLG", // ここに実際のURLを挿入してください
     category: "programming",
     imageUrl: "https://m.media-amazon.com/images/I/81KbmzH9wrL._SY522_.jpg",
-    reccomeded: true,
+    reccomeded: false,
   },
 ];
