@@ -100,7 +100,7 @@ const Home: React.FC = () => {
       {/* アクションリンク */}
       <div className="flex flex-col items-center space-y-4">
         <Link
-          to="/resources/all"
+          to="/resources"
           className="bg-blue-500 text-white px-6 py-3 rounded-lg shadow hover:bg-blue-600 transition-colors duration-300 text-center w-48 text-base sm:text-lg"
         >
           教材一覧をみる

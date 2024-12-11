@@ -73,7 +73,7 @@ const About: React.FC = () => {
       {/* アクションボタン */}
       <div className="flex justify-center mt-12">
         <Link
-          to="/resources/all"
+          to="/resources"
           className="bg-blue-500 text-white px-6 py-3 rounded-lg shadow hover:bg-blue-600 transition-colors duration-300 text-center text-base sm:text-lg"
         >
           教材一覧をみる
