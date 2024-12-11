@@ -44,6 +44,16 @@ const ResourceDetail: React.FC = () => {
           />
         </div>
       )}
+      <div className="flex flex-col sm:flex-row sm:justify-center sm:space-x-4 space-y-4 sm:space-y-0 mb-8">
+        <a
+          href={resource.url}
+          target="_blank"
+          rel="noreferrer"
+          className="bg-blue-500 text-white px-6 py-3 rounded-lg shadow hover:bg-blue-600 transition-colors duration-300 text-center text-base sm:text-lg"
+        >
+          Amazonでチェック
+        </a>
+      </div>
 
       {/* 説明文やarticle表示部分 */}
       {resource.article && (
@@ -67,12 +77,12 @@ const ResourceDetail: React.FC = () => {
           </p>
         </div>
       )}
-
+      {/* 
       {resource.description && (
         <p className="text-gray-700 mb-4 text-base sm:text-lg leading-relaxed">
           {resource.description}
         </p>
-      )}
+      )} */}
 
       <p className="text-gray-700 mb-4 text-base sm:text-lg leading-relaxed">
         このリソースを活用し、あなたのスキルをもう一段階高めてみませんか？将来のキャリアや学業にプラスになる知識を、今ここで身につけましょう。
@@ -87,14 +97,6 @@ const ResourceDetail: React.FC = () => {
           className="bg-blue-500 text-white px-6 py-3 rounded-lg shadow hover:bg-blue-600 transition-colors duration-300 text-center text-base sm:text-lg"
         >
           Amazonでチェック
-        </a>
-        <a
-          href={resource.url}
-          target="_blank"
-          rel="noreferrer"
-          className="bg-yellow-500 text-white px-6 py-3 rounded-lg shadow hover:bg-yellow-600 transition-colors duration-300 text-center text-base sm:text-lg"
-        >
-          他の書店で探す
         </a>
       </div>
 

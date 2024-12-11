@@ -50,14 +50,14 @@ const Resources: React.FC = () => {
           </Link>
         </li>
         {/* 統計学系リソース */}
-        <li className="bg-white rounded-lg shadow-md p-4 flex flex-col items-center hover:shadow-xl transition-shadow duration-300">
+        {/* <li className="bg-white rounded-lg shadow-md p-4 flex flex-col items-center hover:shadow-xl transition-shadow duration-300">
           <Link
             to="/resources/stats"
             className="text-xl font-semibold text-blue-600 hover:text-blue-800"
           >
             統計学系リソース
           </Link>
-        </li>
+        </li> */}
         {/* プログラミング系リソース */}
         <li className="bg-white rounded-lg shadow-md p-4 flex flex-col items-center hover:shadow-xl transition-shadow duration-300">
           <Link
@@ -77,14 +77,14 @@ const Resources: React.FC = () => {
           </Link>
         </li>
         {/* データ分析系リソース */}
-        <li className="bg-white rounded-lg shadow-md p-4 flex flex-col items-center hover:shadow-xl transition-shadow duration-300">
+        {/* <li className="bg-white rounded-lg shadow-md p-4 flex flex-col items-center hover:shadow-xl transition-shadow duration-300">
           <Link
             to="/resources/data-analysis"
             className="text-xl font-semibold text-blue-600 hover:text-blue-800"
           >
             データ分析
           </Link>
-        </li>
+        </li> */}
       </ul>
 
       {/* 子ルートの表示 */}

@@ -12,29 +12,33 @@ const Home: React.FC = () => {
     <div className="container mx-auto p-4 max-w-screen-md">
       {/* メイン見出し */}
       <h1 className="text-3xl sm:text-4xl font-extrabold text-blue-600 text-center mb-8">
-        UniStudyGuide! － 大学生のための学習リソース案内
+        UniStudyGuide!
       </h1>
 
-      <h2 className="text-center mb-6 text-base sm:text-lg text-gray-700 leading-relaxed max-w-prose mx-auto">
-        プログラミング、IT基礎、機械学習、Pythonなど、あなたの学びを後押しする教材を厳選。
-        忙しい大学生活でも、効率的にスキルを身につけられるリソースが揃っています。
-      </h2>
+      {/* 運営者情報を前面に出すキャッチコピー */}
+      <p className="text-center mb-6 text-base sm:text-lg text-gray-700 leading-relaxed max-w-prose mx-auto">
+        情報系の大学2年生である私が、現役学生の目線で厳選した学習教材を紹介するサイトへようこそ。
+        <br />
+        プログラミングやIT基礎、機械学習、Pythonといった分野で「どこから始めればいいの？」と思う方へ、
+        <br />
+        自分自身が試行錯誤しながら「これなら学びやすい」と感じた教材を厳選してお届けします。
+      </p>
 
-      {/* 書籍カルーセル */}
+      {/* おすすめ教材ピックアップ */}
       <div className="mb-8">
         <h2 className="text-xl sm:text-2xl font-bold mb-4 text-center">
           おすすめ教材ピックアップ
         </h2>
         <p className="text-center text-gray-700 mb-4 text-base sm:text-lg leading-relaxed max-w-prose mx-auto">
-          初心者向け入門書から専門的な参考書、オンライン講座まで。気になるアイテムで、新たな一歩を踏み出そう。
+          私自身が「この本や講座ならわかりやすい」「これなら忙しい大学生活でも続けられる」と感じたアイテムを揃えました。
+          <br />
+          初心者向けから専門的な内容まで、一歩ずつステップアップできるラインナップです。
         </p>
         <div className="overflow-x-auto whitespace-nowrap flex space-x-4 p-4 border rounded-md shadow-inner">
           {bookResources.map((book) => (
             <div key={book.id} className="flex-none inline-block">
-              <a
-                href={book.url}
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                to={`/resources/${book.id}`}
                 className="block w-32 text-center"
               >
                 <img
@@ -42,7 +46,7 @@ const Home: React.FC = () => {
                   alt={book.title}
                   className="w-32 h-auto mb-2 rounded shadow hover:shadow-lg transition-shadow duration-300"
                 />
-              </a>
+              </Link>
             </div>
           ))}
         </div>
@@ -52,41 +56,43 @@ const Home: React.FC = () => {
       <div className="text-base sm:text-lg text-gray-700 mb-8 space-y-6 leading-relaxed max-w-prose mx-auto">
         <div>
           <h2 className="text-xl sm:text-2xl font-bold mb-4">
-            UniStudyGuide!の魅力
+            なぜ私がこのサイトを作ったのか
+          </h2>
+          <p>
+            私は情報系の大学2年生として、日々プログラミングやIT技術を学んでいます。
+            その中で「初心者のうちに知っておけばよかった教材」や、「これを読んだら急に理解が深まった」という経験が何度もありました。
+            このサイトでは、私が実際に利用したり、同世代の学生から評判を聞いた「大学生が本当に活用しやすい教材」を中心にまとめています。
+          </p>
+        </div>
+
+        <div>
+          <h2 className="text-xl sm:text-2xl font-bold mb-4">
+            選び方のポイント
           </h2>
           <ul className="list-disc list-inside space-y-2">
             <li>
-              <span className="font-semibold">大学生目線で厳選</span> -
-              実践的なITスキル、プログラミングやデータ分析から最新の機械学習まで、学生が本当に使える情報を集約。
+              <span className="font-semibold">学生視点</span> -
+              実践的なITスキル習得や、プログラミング初心者がつまずくポイントを考慮し、理解しやすいものを厳選。
             </li>
             <li>
-              <span className="font-semibold">多彩な教材形式</span> -
-              書籍、動画、オンライン講座、チュートリアルなど、一歩ずつ成長できるコンテンツを豊富に用意。
+              <span className="font-semibold">多様な形式</span> -
+              書籍、動画講座、オンラインチュートリアルなど、好きな学び方が選べるコンテンツを用意。
             </li>
             <li>
-              <span className="font-semibold">わかりやすい構成</span> -
-              シンプルなナビゲーションですぐにお目当ての情報へアクセス可能。
-            </li>
-            <li>
-              <span className="font-semibold">随時アップデート</span> -
-              トレンド技術や新刊もフォローし、常に最新の学習情報をチェックできる。
+              <span className="font-semibold">最新情報に対応</span> -
+              常に新刊やトレンドの技術を追いかけ、学びの質と幅をアップデート。
             </li>
           </ul>
         </div>
 
         <div>
           <h2 className="text-xl sm:text-2xl font-bold mb-4">
-            なぜUniStudyGuide!？
+            あなたの次のステップへ
           </h2>
           <p>
-            学習は将来への投資。プログラミング初心者向けガイドからIT業界へのキャリア提案、機械学習へのステップまで、UniStudyGuide!が次のアクションを明確にします。
-          </p>
-        </div>
-
-        <div>
-          <h2 className="text-xl sm:text-2xl font-bold mb-4">一歩踏み出そう</h2>
-          <p>
-            自分の興味や目標に合った分野からはじめてみてください。スキル習得への道のりを、よりシンプルかつ確実なものにしましょう。
+            「なにから手をつければいいか分からない」そんなときは、このサイトが出発点になれれば嬉しいです。
+            大学生という立場から、実際に感じた「学びやすさ」や「役立ち度」を軸に教材を選んでいるので、
+            あなたもぜひ、ここから新しいスキル習得の一歩を踏み出してください。
           </p>
         </div>
       </div>
@@ -97,7 +103,7 @@ const Home: React.FC = () => {
           to="/resources/all"
           className="bg-blue-500 text-white px-6 py-3 rounded-lg shadow hover:bg-blue-600 transition-colors duration-300 text-center w-48 text-base sm:text-lg"
         >
-          学習リソースを探索
+          教材一覧をみる
         </Link>
         <Link
           to="/contact"
