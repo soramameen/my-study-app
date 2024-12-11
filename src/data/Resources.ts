@@ -1,7 +1,17 @@
+export type article = {
+  headline: string;
+  target: string;
+  nottarget: string;
+  content: string;
+  goodPoint: string;
+  badPoint: string;
+};
+
 export type Resource = {
   id: string;
   title: string;
   description: string;
+  article?: article;
   url: string;
   category:
     | "general"
@@ -12,7 +22,7 @@ export type Resource = {
     | "machine-learning"
     | "data-analysis";
   imageUrl?: string; // 画像URLをオプショナルで追加
-  reccomeded?: boolean; // おすすめリソースかどうかを追加
+  recommended?: boolean; // おすすめリソースかどうかを追加
 };
 
 export const resources: Resource[] = [
@@ -25,28 +35,65 @@ export const resources: Resource[] = [
     url: "https://amzn.to/49v6LSF",
     category: "programming",
     imageUrl: "https://m.media-amazon.com/images/I/81+3DpjuMdL._SY522_.jpg",
-    reccomeded: true,
+    recommended: true,
+    article: {
+      headline:
+        "新人エンジニアから玄人エンジニアまですべてのエンジニアが読むべき本",
+      target: "全てのプログラマー",
+      nottarget: "なし",
+      content:
+        "読みやすいコードを書くスキルは，読むことが8割と言われているプログラマーに必須のスキルといっても過言ではない．",
+      goodPoint:
+        "「優れたコードとはなにか」から始まり具体例を交えて，優れたコードについて学ぶことができる．何度も読み返すことでより深まっていく本である．",
+      badPoint:
+        "コードを書いたことがないレベルだと抽象的で分かりづらい可能性がある．",
+    },
   },
   {
     id: "the-pragmatic-programmer",
     title: "達人プログラマー(第2版): 熟達に向けたあなたの旅",
     description:
       "より良いプログラマになるための実践的アプローチを解説した書籍。アジャイルソフトウェア開発手法の先駆者による執筆で、経験を積み、生産性を高め、ソフトウェア開発全体を深く理解するためのノウハウがまとめられている。入門者からベテランまで、読み返すたびに新たな発見がある一冊。",
+    article: {
+      headline: "プログラマーとしての熟達を目指すあなたへ贈る必読書",
+      target:
+        "プログラマーとしてのスキルを向上させたい方、特にアジャイル開発手法に興味のある方",
+      nottarget: "プログラミング未経験者",
+      content:
+        "本書は、より効率的で生産的なプログラマーを目指すソフトウェア開発者に向けて、アジャイルソフトウェア開発手法の先駆者である二人の著者が執筆したものです。経験を積み、生産性を高め、ソフトウェア開発全体をより良く理解するための実践的なアプローチが解説されています。先見性と普遍性に富んだ本書は、入門者には手引きとなり、ベテランでも読み直すたびに新たな発見がある、座右の一冊です。",
+      goodPoint:
+        "最新の開発手法やツールに対応した情報が含まれており、実践的なアプローチが豊富です。初心者からベテランまで、幅広い層の開発者にとって有益な内容が詰まっています。",
+      badPoint:
+        "ソフトウェア開発に関する基本的な知識を有していることを前提としているため、プログラミング未経験者には一部難解な部分があるかもしれません。",
+    },
     url: "https://amzn.to/3ZJ6dWh",
     category: "programming",
     imageUrl: "https://m.media-amazon.com/images/I/816iLrKIvcL._SL1419_.jpg",
-    reccomeded: true,
+    recommended: true,
   },
+
   {
     id: "network-why-connect",
     title:
       "ネットワークはなぜつながるのか 第2版 知っておきたいTCP/IP、LAN、光ファイバの基礎知識",
     description:
-      "ブラウザにURLを入力してからWebページが表示されるまでの道筋をたどりながら、その裏側で働くTCP/IP、LAN、光ファイバなどの技術を説明していきます。インターネットを通ってサーバーまで行って帰ってくる道筋の途中には、今のネットワークの主要な技術要素が全部あります。そこでの機器やソフトウエアがどのように動き連携しているのかを探検すればネットワーク全体の動きがわかります。第2版では、全体の構成を見直し、探検の途中で、今、ネットワークのどの部分にいるのかを明確にしました。また、各技術の基本的な考え方や成り立ちなど、基礎的な解説を大幅に増やしたほか、個別の補足説明も注釈として多く取り入れています。大事な点は「要約」としてまとめ、読んで記憶に残るようにしました。初心者の方も、基本的なところからきちんと理解して読み進めてもらえます。\n\n特徴1：ネットワークの全体の動きがわかる“探検ツアー”\n本書は、ブラウザにURLを入力してから、サーバーがWebページの情報を返信してくるまでの過程を順番に追っていくというユニークな構成です。入力されたデータがパケットとなって、LAN、ハブ、ルーターを通り、プロバイダの回線を抜け、ファイアウォールをくぐり、次の行き先を探りながらゴールのWebサーバーを目指して、さまざまに姿を変えながら進んでいく様子を追うことで、個別技術を見ているだけではわからない、“現実の”動きがわかります。\n\n特徴2：２大技術TCP/IP、LANが確実に理解できる！\nIPアドレス、ネットマスク、デフォルト・ゲートウエイなどはパソコンのTCP/IPの設定で目にしますし、家庭内LANも普及してMACアドレスという言葉も身近になりました。「イメージとしてはなんとなくわかる」これらの用語が、現実の機器とソフトウエアがどうように動くかを知ることで、本質からきちんと理解できます。\n\n特徴3：最先端の光ファイバの中身ものぞいてみよう！\nインターネットの普及で、家庭とプロバイダをつなぐアクセス回線の技術も進んでいます。ADSLでの信号化の技術や伝送方法、光ファイバが高速化できている仕組みなどをくわしく解説しています。",
+      "インターネットの裏側を探検しよう！『ネットワークはなぜつながるのか 第2版』は、ブラウザにURLを入力してからWebページが表示されるまでのプロセスをわかりやすく追い、TCP/IP、LAN、光ファイバなどの基礎技術を詳細に解説します。ネットワークの主要な技術要素がどのように連携し、動いているのかを学びながら、実際の機器やソフトウェアがどのように機能しているかを理解できます。第2版では、全体構成を見直し、各技術の基本的な考え方や成り立ちを強化。初心者でもスムーズに理解できるように要約を充実させ、記憶に残る学習体験を提供します。ネットワークの仕組みを深く知りたい方にぴったりの一冊です！",
+    article: {
+      headline: "ネットワークの基礎を体系的に学べる必携書",
+      target:
+        "ネットワークの基礎を体系的に学びたい初心者から中級者、実務でネットワークを扱う方",
+      nottarget: "ネットワークの高度な専門知識を既に持つ上級者",
+      content:
+        "『ネットワークはなぜつながるのか 第2版』は、ブラウザにURLを入力してからWebページが表示されるまでの過程を追いながら、その裏側で動作するTCP/IP、LAN、光ファイバなどの技術を解説する書籍です。第2版では全体の構成を見直し、各技術の基本的な考え方や成り立ちの解説を増やし、初心者でも理解しやすい内容となっています。実務でネットワークを扱う方にも、基本を再確認するための良い参考書となるでしょう。",
+      goodPoint:
+        "ネットワークの全体像を探検するユニークな構成により、各技術要素がどのように連携しているかを直感的に理解できる点。TCP/IPやLANの基本を確実に理解できる詳細な解説があり、光ファイバの最先端技術についても深く掘り下げている点。",
+      badPoint:
+        "初版が2007年に刊行されているため、一部技術や用語が現在の最新動向に完全には対応していない可能性があります。特にADSLに関する記述が多く、現在主流の光ファイバ技術に関する最新情報は別途確認が必要です。",
+    },
     url: "https://amzn.to/3ZMVMzV",
     category: "info",
     imageUrl: "https://m.media-amazon.com/images/I/81sBKxze5ML._SY466_.jpg",
-    reccomeded: true,
+    recommended: true,
   },
   {
     id: "zero-deep-learning",
@@ -57,16 +104,29 @@ export const resources: Resource[] = [
     url: "https://amzn.to/4gqiepa",
     category: "machine-learning",
     imageUrl: "https://m.media-amazon.com/images/I/91exSUPsr6L._SY466_.jpg",
-    reccomeded: false,
+    recommended: false,
   },
   {
     id: "master-calculus",
     title: "1冊でマスター 大学の微分積分",
     description:
       "講義と演習で効率よく確実に力がつく! 大学数学の必須科目「微分積分」を1冊でマスターできます。高校の復習から大学生を悩ませるε-δ論法まで懇切丁寧に解説。図とグラフを多用した説明と豊富なパターンの問題を解いていきます。単なる解説ではなく、どうしてそう考えるのか、どうとらえるとよいかといった実際に学ぶ人の視点を意識した構成になっています。さらに付属の別冊(見開き完結型の演習問題と確認問題)でよりスキルアップを図ることができます。※別冊の演習問題の部分のみを、技術評論社 書籍サポートページからダウンロードできます。講義編と合わせて実力アップにお役立てください。",
+    article: {
+      headline: "大学の微分積分を1冊で完全マスター！",
+      target:
+        "大学数学の微分積分を体系的に学びたい学生や社会人、復習をしたい方",
+      nottarget: "微分積分の基本を既に完璧に理解している上級者",
+      content:
+        "『1冊でマスター 大学の微分積分』は、大学数学の必須科目である微分積分を、高校の復習から大学レベルの内容まで丁寧に解説した書籍です。図やグラフを多用し、式の意味を理解しながら進められる構成となっており、豊富なパターンの問題を通じて実際に計算しながら学習を進めることができます。各章では具体的な例題や演習問題を通じて、微分積分の概念や計算方法を深く理解できるよう工夫されています。",
+      goodPoint:
+        "図とグラフを多用した視覚的な説明により、微分積分の概念を直感的に理解できる点。豊富な演習問題と別冊の演習問題集により、実践的なスキルを効率的に身につけられる点。丁寧な解説で初心者でも無理なく学習を進められる点。",
+      badPoint:
+        "本書は2014年に出版されており、その後の数学教育の変化や最新の学習方法に完全には対応していない可能性があります。特に最新の教育ツールやオンラインリソースとの連携が不足している点。",
+    },
     url: "https://amzn.to/4iqa1Ts",
     category: "math",
     imageUrl: "https://m.media-amazon.com/images/I/61iSCu6ZqJL._SY342_.jpg",
+    recommended: false,
   },
   {
     id: "javascript-introduction-3rd-edition",
@@ -76,7 +136,7 @@ export const resources: Resource[] = [
       "累計100万部以上の技術書を送り出してきた著者の、日本で1番売れているJavaScriptの本が7年ぶりの大幅増補改訂。2010年の刊行から約100,000部の実績を誇るロングセラーを、ECMAScript 2022に対応した内容で200ページ増の大幅改訂。最新の基本文法から、開発に欠かせない応用トピックまで解説します。JavaScriptらしく書くために大切なオブジェクトの扱い方や、大規模開発でさらに実用的になったオブジェクト指向構文を学び、しっかりと動くプログラムの作り方を本質から理解できます。",
     url: "https://amzn.to/4isaIvw", // ここに実際のURLを挿入してください
     category: "programming",
-    reccomeded: false,
+    recommended: false,
     imageUrl: "https://m.media-amazon.com/images/I/71VxGM-VsLL._SY466_.jpg",
   },
   {
@@ -88,7 +148,7 @@ export const resources: Resource[] = [
     imageUrl: "https://m.media-amazon.com/images/I/71Lz5b2SI4L._SY466_.jpg",
 
     category: "programming",
-    reccomeded: false,
+    recommended: false,
   },
   {
     id: "self-taught-programmer-python",
@@ -97,18 +157,30 @@ export const resources: Resource[] = [
       "本書は「Pythonだけ」を学ぶ本ではありません。Pythonを使ってプログラミングを紹介していますが、伝えたい内容はPythonに限らない「プログラミング全般」の知識です。プログラマになるためのスキルを独学できる本であり、Pythonプログラミングの基本を学べるだけでなく、シェル、正規表現、パッケージ管理、バージョン管理、データ構造、アルゴリズム、仕事の始め方・やり方など、プログラマとして必要なスキルもひと通り学べます。著者のコーリー・アルソフ氏による独学の経験に基づいた実践的なアドバイスが豊富に盛り込まれており、プログラミングを独学で身につけたい方やプロを目指す方に最適な一冊です。",
     url: "https://amzn.to/49xjVi3", // ここに実際のURLを挿入してください
     category: "programming",
-    reccomeded: false,
+    recommended: false,
     imageUrl: "https://m.media-amazon.com/images/I/71ZpZY+xd5S._SY342_.jpg",
   },
   {
     id: "world-class-engineer-thinking-method",
     title: "世界一流エンジニアの思考法",
     description:
-      "米マイクロソフトの現役ソフトウェアエンジニアが、超巨大クラウドの開発最前線で学んだ思考法を紹介する一流エンジニアのマインドセット。試行錯誤の重要性、価値の最大化、効率的なコミュニケーションなど、生産性を向上させ、幸せに働くための実践的な技術と哲学が満載です。",
-    url: "https://amzn.to/41ot2zB", // ここに実際のURLを挿入してください
+      "世界トップクラスのエンジニアたちが実践する思考法を学ぼう！『世界一流エンジニアの思考法』は、米マイクロソフトの現役ソフトウェアエンジニアである牛尾剛氏が、超巨大クラウドの開発最前線で培った思考法や生産性向上の秘訣を余すところなく紹介します。試行錯誤の重要性、価値の最大化、効率的なコミュニケーションなど、エンジニアとしてのキャリアを高め、幸せに働くための実践的な技術と哲学が満載。これからエンジニアとして成長したい方や、チームの生産性を向上させたい方に最適の一冊です！",
+    article: {
+      headline: "世界一流エンジニアの思考法を手に入れよう！",
+      target:
+        "エンジニアとしてのキャリアを高めたい方、生産性を向上させたい方、世界トップクラスのエンジニアの思考法に興味がある方",
+      nottarget: "エンジニアとしての基礎を既に完璧に理解している上級者",
+      content:
+        "『世界一流エンジニアの思考法』は、米マイクロソフトの現役ソフトウェアエンジニアである牛尾剛氏が、世界トップクラスのエンジニアたちの思考法や生産性向上の秘訣を紹介した書籍です。本書は、エンジニアとしてのキャリアを高めたい方や、生産性を向上させたい方にとって有益な内容となっています。各章では、生産性の高いエンジニアの思考法や習慣、チームビルディングの方法、AI時代に求められるスキルなどが詳しく解説されています。",
+      goodPoint:
+        "世界一流のエンジニアから直接学べる実践的な思考法や習慣が豊富に紹介されている点。生産性を向上させる具体的なテクニックや、効率的なコミュニケーション術が実務に直結する内容である点。チームビルディングやAI時代の生き残り方など、幅広いテーマをカバーしている点。",
+      badPoint:
+        "最新の技術動向や業界の変化に対応するためには、出版後の追加情報や最新リソースの確認が必要になる可能性がある点。",
+    },
+    url: "https://amzn.to/41ot2zB",
     category: "programming",
     imageUrl: "https://m.media-amazon.com/images/I/81RO+wECc0L._SY522_.jpg",
-    reccomeded: true,
+    recommended: true,
   },
   {
     id: "web-technology-introduction-new-edition",
@@ -118,7 +190,7 @@ export const resources: Resource[] = [
     url: "https://amzn.to/3ZHievf", // ここに実際のURLを挿入してください
     category: "programming",
     imageUrl: "https://m.media-amazon.com/images/I/61whkFViA5L._SY522_.jpg",
-    reccomeded: false,
+    recommended: false,
   },
   {
     id: "good-vs-bad-code-design-introduction",
@@ -129,7 +201,7 @@ export const resources: Resource[] = [
     url: "https://amzn.to/4g3jqPp", // ここに実際のURLを挿入してください
     category: "programming",
     imageUrl: "https://m.media-amazon.com/images/I/81uCm6qpj7L._SY522_.jpg",
-    reccomeded: false,
+    recommended: false,
   },
   {
     id: "sukkiri-python-introduction-2nd-edition",
@@ -139,7 +211,7 @@ export const resources: Resource[] = [
     url: "https://amzn.to/49CmDmI", // ここに実際のURLを挿入してください
     category: "programming",
     imageUrl: "https://m.media-amazon.com/images/I/71jt9BEXU-L._SY522_.jpg",
-    reccomeded: false,
+    recommended: false,
   },
   {
     id: "html-css-web-design-introduction-2nd-edition",
@@ -150,18 +222,31 @@ export const resources: Resource[] = [
     url: "https://amzn.to/41v2X1V", // ここに実際のURLを挿入してください
     category: "programming",
     imageUrl: "https://m.media-amazon.com/images/I/81BHtZPjuvL._SY522_.jpg",
-    reccomeded: false,
+    recommended: false,
   },
   {
     id: "vtuber-sapuu-teaches-python",
     title: "VTuberサプーが教える！　Python　初心者のコード／プロのコード",
     description:
       "自分のコードを改善したくなる！プロが実践する書きかた。「自分が書いたコードは、仕事で通用するか不安……」「動くものは作れる。そこからどう上達すればいい？」そんな悩みを抱えるあなたに、VTuberサプーがPythonでのコードの書きかたをお教えします！　本書は、コードの見た目の整えかたから、読みやすさ、シンプルさ、安全性……などを意識した「プロ」の知識とテクニックをまとめました。中の人のエンジニア経験から得た知見をもとに解説しているので、実際に現場でちゃんと役立つコードに改善できます。この1冊で、自分の書くコードをワンランクアップさせましょう！",
-    url: "https://amzn.to/3Vt4zp6", // ここに実際のURLを挿入してください
+    article: {
+      headline: "プロの視点で学ぶPythonコードの書き方",
+      target:
+        "エンジニアへの転職を目指してPythonを学習中の方や、より良いコードの書き方を知りたい方",
+      nottarget: "プログラミング未経験者",
+      content:
+        "『VTuberサプーが教える！ Python 初心者のコード／プロのコード』は、VTuberとして活躍するサプー氏が、Pythonプログラミングにおける初心者のコードとプロフェッショナルのコードの違いを解説した書籍です。本書は、コードの見た目の整え方から、読みやすさ、シンプルさ、安全性など、プロの知識とテクニックをまとめています。各章では、具体的なコード例を通じて、初心者の書きがちなコードとプロが意識する改善点を比較しながら解説しています。",
+      goodPoint:
+        "実務に基づいた解説で、現場で役立つコード改善のポイントを具体的に学べる点。初心者のコードとプロのコードを比較する具体的なコード例が豊富に含まれており、改善点を視覚的に理解できる点。幅広いトピックをカバーしており、総合的なスキル向上が期待できる点。",
+      badPoint:
+        "本書は2024年7月に出版されたばかりのため、最新のPythonバージョンやライブラリに関する情報がまだ十分に反映されていない可能性がある点。",
+    },
+    url: "https://amzn.to/3Vt4zp6",
     category: "programming",
     imageUrl: "https://m.media-amazon.com/images/I/81vueolIx-L._SY522_.jpg",
-    reccomeded: false,
+    recommended: false,
   },
+
   {
     id: "code-ai-generative-ai-practical-introduction",
     title: "コード×AIーソフトウェア開発者のための生成AI実践入門",
@@ -170,7 +255,7 @@ export const resources: Resource[] = [
     url: "https://amzn.to/3ZIKu0u", // ここに実際のURLを挿入してください
     category: "programming",
     imageUrl: "https://m.media-amazon.com/images/I/714KadFykuL._SY522_.jpg",
-    reccomeded: false,
+    recommended: false,
   },
   {
     id: "python-algorithms-textbook",
@@ -180,7 +265,7 @@ export const resources: Resource[] = [
     url: "https://amzn.to/4g4pNlC", // ここに実際のURLを挿入してください
     category: "programming",
     imageUrl: "https://m.media-amazon.com/images/I/81pcgCg4YdL._SY522_.jpg",
-    reccomeded: false,
+    recommended: false,
   },
   {
     id: "html-css-web-design-beginner-book",
@@ -190,7 +275,7 @@ export const resources: Resource[] = [
     url: "https://amzn.to/3D0X9D5", // ここに実際のURLを挿入してください
     category: "programming",
     imageUrl: "https://m.media-amazon.com/images/I/81tfCIhb3mL._SY522_.jpg",
-    reccomeded: false,
+    recommended: false,
   },
   {
     id: "amazon-co-jp-javascript-introduction-course",
@@ -201,6 +286,6 @@ export const resources: Resource[] = [
     url: "https://amzn.to/4g2ZGLG", // ここに実際のURLを挿入してください
     category: "programming",
     imageUrl: "https://m.media-amazon.com/images/I/81KbmzH9wrL._SY522_.jpg",
-    reccomeded: false,
+    recommended: false,
   },
 ];
